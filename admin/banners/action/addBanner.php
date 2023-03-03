@@ -2,7 +2,7 @@
     <form action="banners/action/resq.php" method="post">
         <tr>
             <th scope="row">Title</th>
-            <td><input type="text" name="title" style="width: 100%;"></td>
+            <td><input class='form-control' type="text" name="title" style="width: 100%;"></td>
         </tr>
         <tr class="">
             <th scope="row">Content</th>
@@ -10,7 +10,7 @@
         </tr>
         <tr class="">
             <th scope="row">Image</th>
-            <td><input name="img" type="text" style="width: 100%;"></td>
+            <td><input class='form-control' name="img" type="text" style="width: 100%;"></td>
             <!-- <td><input name="upload" type="file"></td> -->
         </tr>
         <tr class="">

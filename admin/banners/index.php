@@ -19,7 +19,7 @@
         <tbody>
             <?php
             $mysqli = require __DIR__ . "../../../db/database.php";
-            $sql = "SELECT * FROM banners";
+            $sql = "SELECT * FROM banners ORDER BY id DESC";
             $result = $mysqli->query($sql);
             while ($banner = mysqli_fetch_array($result)) {
                 echo "
@@ -59,26 +59,29 @@
         echo "
         <h3 class='mt-3'>Chỉnh sửa banner</h3>
         <table class='table table-primary table-success table-striped w-50'>
-<form action='banners/action/resq.php' method='post'>
-    <tr>
-        <th scope='row'>Title</th>
-        <td><input type='text' name='title' style='width: 100%;' value='{$bannerEdit["title"]}'></td>
-    </tr>
-    <tr class=''>
-        <th scope='row'>Content</th>
-        <td> <textarea class='form-control' name='content' rows='2'>{$bannerEdit["content"]}</textarea></td>
-    </tr>
-    <tr class=''>
-        <th scope='row'>Image</th>
-        <td><input name='img' type='text' style='width: 100%;' value='{$bannerEdit["img_upload"]}'></td>
-        <!-- <td><input name='upload' type='file'></td> -->
-    </tr>
-    <tr class=''>
-        <th></th>
-        <td><input type='submit' class='btn btn-primary' name='addbanner' value='Add banner'></td>
-    </tr>
-</form>
-</table>";
+        <form action='./banners/action/editBanner.php' method='post'>
+            <tr>
+                <th scope='row'>Title</th>
+                <td><input class='form-control' type='text' name='title' style='width: 100%;' value='{$bannerEdit["title"]}'></td>
+            </tr>
+            <tr class=''>
+                <th scope='row'>Content</th>
+                <td> <textarea class='form-control' name='content' rows='2'>{$bannerEdit["content"]}</textarea></td>
+            </tr>
+            <tr class=''>
+                <th scope='row'>Image</th>
+                <td><input class='form-control' name='img' type='text' style='width: 100%;' value='{$bannerEdit["img_upload"]}'></td>
+                <!-- <td><input name='upload' type='file'></td> -->
+                <input name='id_banner_uplate' type='hidden' value='{$_POST['id_banner_uplate']}'>
+            </tr>
+            <tr class=''>
+                <th></th>
+                <td><input  type='submit' class='btn btn-primary' name='uplatebanner' value='Uplate'></td>
+            </tr>
+        </form>
+        </table>";
     }
+
+
     ?>
 </div>
