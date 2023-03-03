@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  background-color: aqua;
+  border-radius: 4px;
+  margin: 0 4px;
+}
+header {
+  padding: 16px;
+  background-color: rgb(46, 182, 132);
+}
+.text-name {
+  color: white;
+  font-size: 21px;
+}
