@@ -1,18 +1,24 @@
 <?php
+function isEmail($email)
+{
+    $regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
+    if (!preg_match($regex, $email)) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
-$name = $email = $password = $password_again = '';
 $nameErr = $emailErr = $passwordErr = $password_againErr = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
         $nameErr = "* Tên là bắt buộc !!";
     } else {
-        $name = $_POST["name"];
     }
     if (empty($_POST["email"])) {
         $emailErr = "* Email là bắt buộc !!";
     } else {
-        $email = $_POST["email"];
     }
     if (empty($_POST["password"])) {
         $passwordErr = "* Password là bắt buộc !!";
@@ -28,31 +34,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $password_again = $_POST["password_again"];
     }
+
     if ($_POST["password"] !== $_POST["password_again"]) {
         $password_againErr = "* Mật khẩu không trùng khớp";
     } else  $password_againErr = "";
 
+    if (!empty($_POST["name"]) && !empty($_POST["email"]) && isEmail($_POST["email"]) && ($_POST["password"] === $_POST["password_again"]) && !empty($_POST["password"]) && !empty($_POST["password_again"])) {
+        $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-    $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $mysqli = require __DIR__ . '../../db/database.php';
 
-    $mysqli = require __DIR__ . '../../db/database.php';
+        $sql = "INSERT INTO user_admins ( name , email , password_hash ) VALUES(?, ?, ?)";
 
-    $sql = "INSERT INTO user_admins ( name , email , password_hash ) VALUES(?, ?, ?)";
+        $stmt = $mysqli->stmt_init();
 
-    $stmt = $mysqli->stmt_init();
-
-    if (!$stmt->prepare($sql)) {
-        die("sql error : " . $mysqli->error);
-    }
-    $sql_get = "SELECT * FROM user_admins WHERE email = '$email'";
-    $result = $mysqli->query($sql_get);
-    if (mysqli_num_rows($result) > 0) {
-        $emailErr = "* Email đã được sử dụng !!";
-    } else {
-        $stmt->bind_param("sss", $name, $email, $password_hash);
-        if ($stmt->execute()) {
-            header("location: wellcom.html");
-            exit;
+        if (!$stmt->prepare($sql)) {
+            die("sql error : " . $mysqli->error);
+        }
+        $sql_get = "SELECT * FROM user_admins WHERE email = '{$_POST["email"]}'";
+        $result = $mysqli->query($sql_get);
+        if (mysqli_num_rows($result) > 0) {
+            $emailErr = "* Email đã được sử dụng !!";
+        } else {
+            $stmt->bind_param("sss", $_POST["name"], $_POST["email"], $password_hash);
+            if ($stmt->execute()) {
+                header("location: wellcom.html");
+                exit;
+            }
         }
     }
 }

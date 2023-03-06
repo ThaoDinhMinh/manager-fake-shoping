@@ -13,7 +13,7 @@ $mysqli = new mysqli(
 );
 
 if ($mysqli->connect_errno) {
-    die("Thành công" . $mysqli->connect_errno);
+    die("K thành công" . $mysqli->connect_errno);
 }
 
 return $mysqli;
