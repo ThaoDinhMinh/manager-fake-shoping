@@ -12,8 +12,52 @@ p,
 div,
 span,
 a,
+nav,
+ul,
+li,
 button {
   padding: 0;
   margin: 0;
   border: 0;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.header {
+  padding: 12px 0;
+  background-color: aliceblue;
+}
+
+.carousel-caption {
+  color: black;
+}
+.text-banner {
+  font-style: italic;
+  letter-spacing: 4px;
+  margin: 12px 0;
+  font-size: 24px;
+}
+.btn-banner {
+  border: 1px solid green;
+  color: green;
+}
+.banner {
+  height: calc(100vh - 72px);
+}
+
+.img-banner {
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+  .carousel-caption {
+    bottom: 10rem;
+  }
 }

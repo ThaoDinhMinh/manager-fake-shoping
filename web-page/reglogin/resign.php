@@ -134,6 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
 
             <p class="mt-3">Bạn đã có tài khoản !! <a href="login.php">Đăng nhập ngay</a> </p>
+            <p class="mt-3">Trở về trang <a href="../../index.php">Home</a></p>
         </div>
     </div>
 

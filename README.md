@@ -49,4 +49,16 @@
 
 2: Đang làm .\
 -- trang đăng nhập người dùng .\
---
+
+\*\* Ngày 7/3 .\
+
+1: Hoàn thành .\
+
+-- Đăng nhập đăng ký cho trang web người dùng .\
+
+-- Show banner , product lên trang web .\
+
+2 : Đang làm .\
+
+-- Dựng UI cho trang web .\
+ -- Dựng trang detail cho sản phẩm .\

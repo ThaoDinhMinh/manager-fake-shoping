@@ -13,23 +13,37 @@ $emailErr = $passwordErr = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email_user = $_POST["email_user"];
-    $password_hs = $_POST["password_hs"];
+
+
 
     if (empty($_POST["email_user"])) {
+        $emailErr = "* Email là bắt buộc !!";
+    } else {
+        $email_user = $_POST["email_user"];
+    }
+
+    if (empty($_POST["password_hs"])) {
+        $passwordErr = "* Mật khẩu là bắt buộc !!";
+    } else {
+        $password_hs = $_POST["password_hs"];
     }
 
     $mysqli = require __DIR__ . "../../../db/database.php";
     if (isset($_POST["email_user"]) && isset($_POST["password_hs"]) && isEmail($_POST["email_user"])) {
-        $sql = " SELECT * FROM user_admins 
-        WHERE email = '$email_user'";
-        $user = $mysqli->query($sql)->fetch_assoc();
+
+        $sql = sprintf(
+            " SELECT * FROM users 
+                        WHERE email_user = '%s'",
+            $mysqli->real_escape_string($_POST["email_user"])
+        );
+        $result = $mysqli->query($sql);
+        $user = $result->fetch_assoc();
 
         if ($user) {
-            if (password_verify($password_hs, $user["password_hs"])) {
+            if (password_verify($_POST["password_hs"], $user["password_user"])) {
                 session_start();
                 $_SESSION["user_id"] = $user["id"];
-                header("location: ../index.php");
+                header("location: ../../index.php");
                 exit;
             }
         } else {
@@ -73,10 +87,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p class="text-danger"><?php echo $passwordErr; ?></p>
                 </div>
 
-                <input name="button" type="submit" class="btn btn-primary" value="Đăng ký">
+                <input name="button" type="submit" class="btn btn-primary" value="Đăng nhập">
             </form>
 
             <p class="mt-3">Bạn có khoản !! <a href="resign.php">Đăng ký ngay</a> </p>
+            <p class="mt-3">Trở về trang <a href="../../index.php">Home</a></p>
         </div>
     </div>
     <!-- Bootstrap JavaScript Libraries -->

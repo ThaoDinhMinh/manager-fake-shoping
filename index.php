@@ -1,3 +1,15 @@
+<?php
+session_start();
+$mysqli = require __DIR__ . "/db/database.php";
+
+if (isset($_SESSION["user_id"])) {
+    $sql_user = "SELECT * FROM users WHERE id = {$_SESSION["user_id"]}";
+    $user = $mysqli->query($sql_user)->fetch_assoc();
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -19,14 +31,13 @@
     <header class="header">
         <?php include("./web-page/components/header.php"); ?>
     </header>
-
     <div class="main">
         <?php include("./web-page/components/main.php"); ?>
     </div>
     <footer class="footer">
         <?php include("./web-page/components/footer.php"); ?>
-
     </footer>
+
 
 
     <!-- Bootstrap JavaScript Libraries -->
