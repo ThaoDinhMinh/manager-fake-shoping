@@ -1,7 +1,6 @@
 <?php
 session_start();
 $mysqli = require __DIR__ . "/db/database.php";
-
 if (isset($_SESSION["user_id"])) {
     $sql_user = "SELECT * FROM users WHERE id = {$_SESSION["user_id"]}";
     $user = $mysqli->query($sql_user)->fetch_assoc();

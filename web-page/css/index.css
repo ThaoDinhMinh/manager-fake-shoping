@@ -42,20 +42,102 @@ a {
   margin: 12px 0;
   font-size: 24px;
 }
+.text-price {
+  color: #cea08a;
+}
 .btn-banner {
   border: 1px solid green;
-  color: green;
-}
-.banner {
-  height: calc(100vh - 72px);
+  color: black;
+  transition: all 0.3s linear;
+  padding: 4px 16px;
+  display: inline-block;
+  border-radius: 4px;
 }
 
-.img-banner {
-  height: 100%;
-  object-fit: cover;
+.btn-banner:hover {
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+.text-asb {
+  position: absolute;
+  width: 100%;
+  bottom: 3rem;
+  text-align: center;
+}
+.text-posi {
+  color: white;
+  padding: 8px 12px;
+  border: 1px solid green;
+  border-radius: 4px;
+  display: inline;
+  cursor: pointer;
+}
+.text-posi:hover {
+  background-color: green;
+}
+.img-colect {
+  transition: all 0.3s linear;
+}
+.img-content {
+  position: relative;
+  transition: all 0.3s linear;
   overflow: hidden;
 }
 
+.img-colect:hover {
+  transform: scale(1.2);
+}
+
+.all-social li {
+  margin-left: 10px;
+}
+.footer-link {
+  font-size: 14px;
+}
+.footer-link li {
+  padding-top: 5px;
+}
+.name-list {
+  padding-bottom: 12px;
+  border-bottom: 1px solid green;
+}
+.colect {
+  background-color: rgba(255, 192, 203, 0.219);
+}
+.footer-top {
+  border-bottom: 1px solid green;
+  padding-bottom: 24px;
+  padding-bottom: 12px;
+}
+.footer-bottom {
+  padding: 24px 0;
+}
+.footer {
+  background-color: rgba(255, 192, 203, 0.219);
+  padding-top: 42px;
+}
+
+.text-descrip {
+  border-top: 1px solid green;
+}
+.add-btn {
+  border: 0;
+  border: 1px solid #cea08a;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: #cea08a;
+  color: white;
+  transition: all 0.3s linear;
+}
+.add-btn:hover {
+  background-color: white;
+  color: #cea08a;
+}
+.img-logo {
+  width: 72px;
+  margin-left: -16px;
+}
 @media (min-width: 1200px) {
   .carousel-caption {
     bottom: 10rem;

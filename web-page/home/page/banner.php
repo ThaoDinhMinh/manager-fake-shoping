@@ -15,13 +15,13 @@ $getBanner = $mysqli->query($sql_banner);
         <?php
         while ($banner = mysqli_fetch_array($getBanner)) {
             echo   " <div class='carousel-item active'>
-            <img src={$banner[3]} class='d-block w-100 img-banner' alt={$banner[1]}>
+            <img src={$banner['img_upload']} class='d-block w-100 img-banner' alt={$banner['title']}>
                 <div class='carousel-caption d-none d-md-block'>
-                <p>{$banner[1]}</p>
-                <h5 class='text-banner'>{$banner[2]}</h5>
-                <p>{$banner[1]}</p>
-                <div class='btn mt-3 mb-1 btn-banner'>
-                Show
+                <p>{$banner['title']}</p>
+                <h5 class='text-banner'>{$banner['content']}</h5>
+                <p>{$banner['title']}</p>
+                <div class='mt-3 mb-1 '>
+                <a class='btn-banner' href='index.php?page=product'>Xem thêm</a>
                 </div>
             </div>
         </div>";

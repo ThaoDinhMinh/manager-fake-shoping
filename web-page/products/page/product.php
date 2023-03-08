@@ -12,17 +12,17 @@ $getProduct = $mysqli->query($sql_product);
     <div class="row flex-wrap">
         <?php
         while ($product = mysqli_fetch_array($getProduct)) {
-            $fomat = number_format($product[5]);
+            $fomat = number_format($product['price']);
             echo "
             <div class='col-lg-3 col-md-4 col-12 mt-5'>
-                <a href='index.php?id={$product[0]}'>
+                <a href='index.php?id={$product['id']}'>
                     <div class='product'>
                         <div class='item-img'>
-                            <img class='w-100 d-block' src='{$product[2]}' alt='{$product[1]}'>
+                            <img class='w-100 d-block' src='{$product['url_img']}' alt='{$product['name']}'>
                         </div>
                         <div class='text-mean'>
                             <div class='title mt-2'>
-                                <p class='text-title'>{$product[1]}</p>
+                                <p class='text-title'>{$product['name']}</p>
                                 <p class='text-price mt-2'>{$fomat} vnd</p>
                             </div>
                         </div>

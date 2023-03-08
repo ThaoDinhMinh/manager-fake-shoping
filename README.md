@@ -62,3 +62,14 @@
 
 -- Dựng UI cho trang web .\
  -- Dựng trang detail cho sản phẩm .\
+
+\*\* Ngày 8/3 .
+
+1:Hoàn thành .
+
+-- Trang chủ ( còn sơ xài )!
+-- Detail ( còn sơ xài )
+
+2: Đang làm :
+-- Trang giỏ hàng .
+-- ...
