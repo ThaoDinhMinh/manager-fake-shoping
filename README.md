@@ -73,3 +73,12 @@
 2: Đang làm :
 -- Trang giỏ hàng .
 -- ...
+
+\*\*\* Ngày 9/3 .
+
+1 :Hoàn thành .
+-- chưa có
+
+2 : Đang làm.
+
+-- Trang giỏ hàng và fix giỏ hàng

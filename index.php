@@ -5,6 +5,14 @@ if (isset($_SESSION["user_id"])) {
     $sql_user = "SELECT * FROM users WHERE id = {$_SESSION["user_id"]}";
     $user = $mysqli->query($sql_user)->fetch_assoc();
 }
+if (!isset($_SESSION["cart"])) {
+    $_SESSION["cart"] = array();
+}
+if (!isset($_SESSION["qty_arry"])) {
+    $_SESSION["qty_arry"] = array();
+}
+
+unset($_SESSION["qty_array"]);
 
 ?>
 

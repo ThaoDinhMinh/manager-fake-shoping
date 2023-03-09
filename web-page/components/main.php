@@ -25,6 +25,8 @@
         include("web-page/news/index.php");
     } elseif ($page == "detail") {
         include("web-page/detail/index.php");
+    } elseif ($page == "cart") {
+        include("web-page/cart/index.php");
     }
     ?>
 </div>

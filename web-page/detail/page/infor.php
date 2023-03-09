@@ -1,22 +1,23 @@
 <?php
-$added = false;
+
+if (in_array($_GET["id"], $_SESSION["cart"])) {
+    $_SESSION["mesage"] = "Đã thêm vào giỏ hàng";
+} else  $_SESSION["mesage"] = "Thêm vào giỏ hàng";
 if (isset($_SESSION["user_id"])) {
     if (isset($_POST["submit"])) {
-        $added = true;
-        $date_oder = date("Y/m/d");
-        $sql_cart = "INSERT INTO cards (user_id , oder_id ,date_oder,qty) VALUE (?,?,?,?)";
+        if (!in_array($_GET['id'], $_SESSION['cart'])) {
+            array_push($_SESSION["cart"], $_GET["id"]);
 
-        $stmt = $mysqli->stmt_init();
-        if (!$stmt->prepare($sql_cart)) {
-            die("sql error : " . $mysqli->error);
+            array_push($_SESSION["qty_arry"], $_POST["qty"]);
+
+
+            $_SESSION["mesage"] = "Đã thêm vào giỏ hàng";
+            header("location: index.php?id={$_GET['id']}");
         }
-        $stmt->bind_param("iisi", $_SESSION["user_id"], $_GET["id"], $date_oder, $_POST["qty"]);
-        $stmt->execute();
     }
 } else {
     header("location: web-page/reglogin/login.php");
 }
-
 
 ?>
 
@@ -39,16 +40,11 @@ if (isset($_SESSION["user_id"])) {
                     <p class="mb-3">Số lượng</p>
                     <div class="d-flex">
                         <input name="qty" style="width:50px" class="form-control" type="text" value="<?php echo $productSelect["qty"] ?>">
-                        <input <?php if ($added) {
-                                    echo "disabled";
-                                } else echo ""; ?> name="submit" type="submit" class=" add-btn mx-2" value="<?php if ($added) {
-                                                                                                                                                echo "Đã thêm vào giỏ hàng";
-                                                                                                                                            } else {
-                                                                                                                                                echo "Thêm vào giỏ hàng";
-                                                                                                                                            } ?>">
+                        <input name="submit" type="submit" class=" add-btn mx-2" value="<?php echo $_SESSION["mesage"] ?>">
                     </div>
                 </form>
             </div>
         </div>
+        <p></p>
     </div>
 </div>

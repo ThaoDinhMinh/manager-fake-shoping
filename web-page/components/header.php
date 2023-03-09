@@ -9,12 +9,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="btn btn-lg" href="index.php">Trang chủ</a>
+                    <a class="btn btn-sm" href="index.php">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-lg" href="index.php?page=product">Sản phẩm</a>
+                    <a class="btn btn-sm" href="index.php?page=product">Sản phẩm</a>
                 </li>
-                <li class="nav-item"> <a class="btn btn-lg" href="index.php?page=news">Tin tức</a></li>
+                <li class="nav-item"> <a class="btn btn-sm" href="index.php?page=news">Tin tức</a></li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -27,6 +27,19 @@
                     <p><a class="btn btn-sm" href="./web-page/reglogin/login.php">Đăng nhập</a></p>
                     <p><a class="btn btn-sm" href="./web-page/reglogin/resign.php">Đăng ký</a></p>
                 <?php endif; ?>
+                <div class="cart-mean">
+                    <a class="btn btn-sm" href="index.php?page=cart">Cart</a>
+                    <?php
+                    if (isset($_SESSION["user_id"])) :
+                    ?>
+                        <p class="number-oder"> <?php
+                                                echo count($_SESSION["cart"]);
+                                                ?>
+                        </p>
+                    <?php else : ?>
+                        <p></p>
+                    <?php endif ?>
+                </div>
             </div>
         </div>
     </div>
