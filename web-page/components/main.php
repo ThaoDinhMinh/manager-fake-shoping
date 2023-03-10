@@ -1,9 +1,3 @@
-<?php
-
-?>
-
-
-
 <div class="main-page">
 
     <?php

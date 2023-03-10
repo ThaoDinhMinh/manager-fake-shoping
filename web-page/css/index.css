@@ -154,6 +154,25 @@ a {
   border-radius: 50%;
   font-size: 12px;
 }
+
+.inputElement,
+.inputSet {
+  border: none;
+  padding-left: 18px;
+  outline: none;
+}
+
+.del-btn-event,
+.add-btn-event {
+  border: 1px solid green;
+}
+
+.btn-cart {
+  border: 1px solid green;
+}
+.show-qty {
+  padding: 0 12px;
+}
 @media (min-width: 1200px) {
   .carousel-caption {
     bottom: 10rem;

@@ -82,3 +82,14 @@
 2 : Đang làm.
 
 -- Trang giỏ hàng và fix giỏ hàng
+
+\*\*\* Ngày 10/3 .
+
+1: Hoàn thành .
+
+-- Chưa có .
+
+2 : Đang làm .
+
+-- Hoàn thiện tiếp trang giỏ hàng !!
+-- Các thông báo khi click các nút

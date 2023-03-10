@@ -1,10 +1,18 @@
 <?php
+$save = false;
 if (count($_SESSION["cart"]) > 0) {
     $sqlOder = "SELECT * FROM products WHERE id IN (" . implode(',', $_SESSION['cart']) . ")";
-
     $oderProductsShow = $mysqli->query($sqlOder);
 }
 
+if (isset($_POST["save"])) {
+    foreach ($_POST['indexos'] as $key) {
+        $_SESSION["qty_arry"][$key] = $_POST["qty_" . $key];
+    }
+    $save = true;
+} else {
+    $save = false;
+}
 
 ?>
 
@@ -15,7 +23,7 @@ if (count($_SESSION["cart"]) > 0) {
 
     <?php else : ?>
 
-        <form action="post">
+        <form action="" method="post">
 
             <table class="table mt-5">
                 <thead>
@@ -47,7 +55,17 @@ if (count($_SESSION["cart"]) > 0) {
                             <td scope='row'>{$oder['name']}</td>
                             <td><img width='100px' height='100px' src={$oder['url_img']} alt={$oder['name']}></td>
                             <td>{$fomat} vnd</td>
-                            <td>{$_SESSION['qty_arry'][$index]}</td>
+                            <td>
+                            <div class='d-flex align-items-center'>
+                                <button onclick='handleDecriment($index)' type='button' class=' btn btn-cart decrimen' >-</button>
+                                <p class='show-qty'>
+                                <input type='hidden' name='indexos[]' value='{$index}'>
+                                <input readonly name='qty_{$index}' style='width:45px' class='inputSet inputSet{$index}' type='text' value='{$_SESSION['qty_arry'][$index]}'>
+                                </p>
+                                <button onclick='handleIcrement($index)' type='button'  class=' btn btn-cart icrement' >+</button>
+                            </div>
+
+                            </td>
                             <td>{$fomatTotal} vnd</td>
                             <td><a href='web-page/cart/action/delete.php?id={$oder["id"]}&index={$index}' class='btn btn-danger btn-sm'>Detele</a></td>
                         </tr>";
@@ -60,8 +78,11 @@ if (count($_SESSION["cart"]) > 0) {
 
                 </tbody>
             </table>
-
+            <div class="text-end mb-2">
+                <p class="text-danger">Hãy cập nhật trước khi thanh toán</p>
+            </div>
             <div class="text-end mb-5">
+                <button name="save" class="btn mx-4 btn-primary btn-lg" type="submit">Cập nhật</button>
                 <a class="btn btn-danger" href="web-page/cart/action/clearCart.php">Xóa toàn bộ</a>
             </div>
             <p class="total text-end mb-5">
@@ -73,10 +94,26 @@ if (count($_SESSION["cart"]) > 0) {
                 ?>
             </p>
 
-            <div class="text-end mb-5">
-                <button class="btn btn-primary btn-lg" type="submit">Thanh toán</button>
+            <div class="text-end mb-5 d-flex justify-content-end">
+
+                <a href="#" class="btn <?php $save ? "" : "disabled" ?>  btn-primary btn-lg">Thanh toán</a>
             </div>
         </form>
     <?php endif; ?>
 
 </div>
+
+<script>
+    const elInputset = document.querySelector(".show-qty");
+    const handleIcrement = (id) => {
+        const InputValue = document.querySelector(`.inputSet${id}`);
+        InputValue.value = Number(InputValue.value) + 1;
+    }
+    const handleDecriment = (id) => {
+        const InputValue = document.querySelector(`.inputSet${id}`);
+        InputValue.value = Number(InputValue.value) - 1;
+        if (InputValue.value < 1) {
+            InputValue.value = 1;
+        }
+    }
+</script>
