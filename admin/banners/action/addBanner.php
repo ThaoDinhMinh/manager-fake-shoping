@@ -13,6 +13,10 @@
             <td><input class='form-control' name="img" type="text" style="width: 100%;"></td>
             <!-- <td><input name="upload" type="file"></td> -->
         </tr>
+        <tr>
+            <th>Chọn ảnh</th>
+            <td><input name='upload' class='form-control' type='file'></td>
+        </tr>
         <tr class="">
             <th></th>
             <td><input type="submit" class="btn btn-primary" name="addbanner" value="Add banner"></td>

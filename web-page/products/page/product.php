@@ -1,6 +1,5 @@
 <?php
 $sql_product = "SELECT * FROM products";
-
 $getProduct = $mysqli->query($sql_product);
 
 ?>
@@ -9,6 +8,7 @@ $getProduct = $mysqli->query($sql_product);
     <div class="header-product">
         <h3 class="mt-3 mb-3">Tất cả sản phẩm</h3>
     </div>
+
     <div class="row flex-wrap">
         <?php
         while ($product = mysqli_fetch_array($getProduct)) {

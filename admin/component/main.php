@@ -13,6 +13,8 @@
         include("oder-user/index.php");
     } elseif ($page == "users") {
         include("users/index.php");
+    } elseif ($page == "detail") {
+        include("detail-oder/index.php");
     } else {
         include("notfount/index.php");
     }

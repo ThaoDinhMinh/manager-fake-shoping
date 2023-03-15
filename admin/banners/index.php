@@ -71,8 +71,11 @@
             <tr class=''>
                 <th scope='row'>Image</th>
                 <td><input class='form-control' name='img' type='text' style='width: 100%;' value='{$bannerEdit["img_upload"]}'></td>
-                <!-- <td><input name='upload' type='file'></td> -->
                 <input name='id_banner_uplate' type='hidden' value='{$_POST['id_banner_uplate']}'>
+            </tr>
+            <tr>
+            <th>Chọn ảnh</th>
+            <td><input name='upload' class='btn btn-sm btn-infor'  type='file'></td>
             </tr>
             <tr class=''>
                 <th></th>

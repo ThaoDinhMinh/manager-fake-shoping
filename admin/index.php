@@ -1,8 +1,7 @@
 <?php
 session_start();
-
+$myspli = require __DIR__ . "../../db/database.php";
 if (isset($_SESSION["admin_id"])) {
-    $myspli = require __DIR__ . "../../db/database.php";
     $sql =  "SELECT * FROM user_admins 
              WHERE id =  {$_SESSION["admin_id"]}";
     $result = $myspli->query($sql);

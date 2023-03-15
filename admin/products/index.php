@@ -26,13 +26,13 @@
             while ($produt_render = mysqli_fetch_array($result)) {
                 echo "
                 <tr >
-                <td>{$produt_render[1]}</td>
-                <td>{$produt_render[2]}</td>
-                <td>{$produt_render[3]}</td>
-                <td>{$produt_render[4]}</td>
-                <td>{$produt_render[5]}</td>
-                <td>{$produt_render[6]}</td>
-                <td>{$produt_render[7]}</td>
+                <td>{$produt_render['name']}</td>
+                <td><img src='{$produt_render[3]}' style='width:100px'></td>
+                <td>{$produt_render['description']}</td>
+                <td>{$produt_render['category']}</td>
+                <td>{$produt_render['price']}</td>
+                <td>{$produt_render['date_create']}</td>
+                <td>{$produt_render['date_uplate']}</td>
                 <td><form action='./products/action/delete.php' method='post'>
                 <input name='id_product' type='hidden' value='{$produt_render[0]}'>
                 <button type='submit' class='btn btn-secondary'>Delete</button>

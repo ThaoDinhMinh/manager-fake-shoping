@@ -10,6 +10,9 @@ $price = $_POST["price"];
 $date_create = date("Y/m/d");
 $date_uplate = date("Y/m/d");
 
+$sql_category = "INSERT INTO categorys (category ) VALUE ($category)";
+$mysqli->query($sql_category);
+
 $sql = "INSERT INTO products (name , url_img , description , category , price , date_create , date_uplate ) VALUE (?,?,?,?,?,?,?)";
 $stmt = $mysqli->stmt_init();
 

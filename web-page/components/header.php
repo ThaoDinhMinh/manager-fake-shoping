@@ -21,7 +21,7 @@
             </form>
             <div class="user-action d-flex align-center">
                 <?php if (isset($_SESSION["user_id"])) : ?>
-                    <p class="user-name btn btn-sm">Chào mừng <a href="#"><?= $user["name_user"]; ?></a></p>
+                    <p class="user-name btn btn-sm">Chào mừng <a href="index.php?page=infor"><?= $user["name_user"]; ?></a></p>
                     <p class="user-name btn btn-sm"><a href="./web-page/reglogin/logout.php">Đăng xuất</a></p>
                 <?php else : ?>
                     <p><a class="btn btn-sm" href="./web-page/reglogin/login.php">Đăng nhập</a></p>

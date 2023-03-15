@@ -21,6 +21,14 @@
         include("web-page/detail/index.php");
     } elseif ($page == "cart") {
         include("web-page/cart/index.php");
+    } elseif ($page == "checkout") {
+        include("web-page/checkout/index.php");
+    } elseif ($page == "history") {
+        include("web-page/history/index.php");
+    } elseif ($page == "oderdetail") {
+        include("web-page/oderDetail/index.php");
+    } elseif ($page == "infor") {
+        include("web-page/infor/index.php");
     }
     ?>
 </div>

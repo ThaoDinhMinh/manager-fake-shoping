@@ -93,3 +93,20 @@
 
 -- Hoàn thiện tiếp trang giỏ hàng !!
 -- Các thông báo khi click các nút
+
+\*\*＊ Ngày 14/3
+
+1: Hoàn thành .
+--chưa có
+2: Đang làm .
+-- Trang quản lý oder , detail oder
+-- View oder , detail oder cho user
+
+\*\*\* Ngày 15/3
+
+1:Hoàn thành
+-- Trang quản lý oder , detail oder
+-- View oder , detail oder cho user
+
+2: Đang làm :
+-- fix lại uplate file cho trang quản lý banner .

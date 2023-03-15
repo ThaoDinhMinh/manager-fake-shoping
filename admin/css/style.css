@@ -15,7 +15,7 @@ a {
 }
 header {
   padding: 16px;
-  background-color: rgb(46, 182, 132);
+  background-color: rgba(65, 65, 65, 0.468);
 }
 .text-name {
   color: white;
