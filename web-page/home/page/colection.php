@@ -23,8 +23,8 @@ $sqlProductRight = $mysqli->query($sqlProductRight);
                         </div>
                         <div class='text-mean'>
                             <div class='title mt-2'>
-                                <p class='text-title'>{$productLeft['name']}</p>
-                                <p class='text-price mt-2'>{$fomat} vnd</p>
+                                <p class='text-title '>{$productLeft['name']}</p>
+                                <p class='text-price mt-2 '>{$fomat} vnd</p>
                             </div>
                         </div>
                     </div>
@@ -58,8 +58,8 @@ $sqlProductRight = $mysqli->query($sqlProductRight);
                         </div>
                         <div class='text-mean'>
                             <div class='title mt-2'>
-                                <p class='text-title'>{$productRight['name']}</p>
-                                <p class='text-price mt-2'>{$fomat} vnd</p>
+                                <p class='text-title '>{$productRight['name']}</p>
+                                <p class='text-price mt-2 '>{$fomat} vnd</p>
                             </div>
                         </div>
                     </div>

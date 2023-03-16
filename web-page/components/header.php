@@ -1,3 +1,11 @@
+<?php
+if (isset($_POST["search"])) {
+    $keySearch = $_POST["search"];
+    header("location: /index.php?page=search&key={$keySearch}");
+}
+?>
+
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary container">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
@@ -16,8 +24,8 @@
                 </li>
                 <li class="nav-item"> <a class="btn btn-sm" href="index.php?page=news">Tin tức</a></li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" role="search" method="post">
+                <input name="search" class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
             </form>
             <div class="user-action d-flex align-center">
                 <?php if (isset($_SESSION["user_id"])) : ?>

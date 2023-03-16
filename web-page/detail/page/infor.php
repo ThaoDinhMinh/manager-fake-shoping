@@ -22,7 +22,7 @@ if (isset($_SESSION["user_id"])) {
 
 <div class="row">
     <div class="col-lg-6 col-12">
-        <img class="w-100 d-block" src=<?php echo $productSelect["url_img"] ?> alt=<?php echo $productSelect["name"] ?>>
+        <img class="w-100 d-block" src="/admin/products/action/<?php echo $productSelect["url_img"] ?>" alt=<?php echo $productSelect["name"] ?>>
     </div>
     <div class="col-lg-6 col-12">
         <h4><?= $productSelect["name"] ?></h4>

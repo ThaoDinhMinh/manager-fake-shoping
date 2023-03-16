@@ -31,6 +31,10 @@ unset($_SESSION["qty_array"]);
 
     <link rel="stylesheet" href="./web-page/css/index.css">
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
 </head>
 
 <body>
@@ -41,7 +45,7 @@ unset($_SESSION["qty_array"]);
     <div class="main">
         <?php include("./web-page/components/main.php"); ?>
     </div>
-    <footer class="footer">
+    <footer class="footer mt-5">
         <?php include("./web-page/components/footer.php"); ?>
     </footer>
 

@@ -110,3 +110,14 @@
 
 2: Đang làm :
 -- fix lại uplate file cho trang quản lý banner .
+
+\*\*\* Ngày 16/3
+
+1: Hoàn thành .\
+-- fix lại uplate file cho trang quản lý banner , product. \
+-- trang tìm kiếm . \
+-- Hiện sản phẩm tại trang news bằng ajax có pagination \
+
+2: Đang làm . \
+
+-- Tìm hiểu về AJAX để làm thêm chức năng Phân loại . \
