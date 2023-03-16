@@ -19,7 +19,7 @@ $sqlProductRight = $mysqli->query($sqlProductRight);
                 <a href='index.php?id={$productLeft['id']}'>
                     <div class='product'>
                         <div class='item-img'>
-                            <img class='w-100 d-block' src='{$productLeft['url_img']}' alt='{$productLeft['name']}'>
+                            <img class='w-100 d-block' src='/admin/products/action/{$productLeft['url_img']}' alt='{$productLeft['name']}'>
                         </div>
                         <div class='text-mean'>
                             <div class='title mt-2'>
@@ -54,7 +54,7 @@ $sqlProductRight = $mysqli->query($sqlProductRight);
                 <a href='index.php?id={$productRight['id']}'>
                     <div class='product'>
                         <div class='item-img'>
-                            <img class='w-100 d-block' src='{$productRight['url_img']}' alt='{$productRight['name']}'>
+                            <img class='w-100 d-block' src='/admin/products/action/{$productRight['url_img']}' alt='{$productRight['name']}'>
                         </div>
                         <div class='text-mean'>
                             <div class='title mt-2'>

@@ -26,7 +26,7 @@
                 <tr >
                 <td>{$banner[1]}</td>
                 <td>{$banner[2]}</td>
-                <td>{$banner[3]}</td>
+                <td><img src='/admin/banners/action/{$banner['img_upload']}' style='width:100px'></td>
                 <td>{$banner[4]}</td>
                 <td>{$banner[5]}</td>
                 <td><form action='./banners/action/delete.php' method='post'>
@@ -59,7 +59,7 @@
         echo "
         <h3 class='mt-3'>Chỉnh sửa banner</h3>
         <table class='table table-primary table-success table-striped w-50'>
-        <form action='./banners/action/editBanner.php' method='post'>
+        <form action='./banners/action/editBanner.php' method='post' enctype='multipart/form-data'>
             <tr>
                 <th scope='row'>Title</th>
                 <td><input class='form-control' type='text' name='title' style='width: 100%;' value='{$bannerEdit["title"]}'></td>
@@ -68,14 +68,9 @@
                 <th scope='row'>Content</th>
                 <td> <textarea class='form-control' name='content' rows='2'>{$bannerEdit["content"]}</textarea></td>
             </tr>
-            <tr class=''>
-                <th scope='row'>Image</th>
-                <td><input class='form-control' name='img' type='text' style='width: 100%;' value='{$bannerEdit["img_upload"]}'></td>
-                <input name='id_banner_uplate' type='hidden' value='{$_POST['id_banner_uplate']}'>
-            </tr>
             <tr>
             <th>Chọn ảnh</th>
-            <td><input name='upload' class='btn btn-sm btn-infor'  type='file'></td>
+            <td><input name='fileupload'  class='form-control'  type='file'></td>
             </tr>
             <tr class=''>
                 <th></th>

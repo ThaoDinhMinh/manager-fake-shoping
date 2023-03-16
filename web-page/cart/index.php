@@ -64,7 +64,7 @@ if (!isset($_SESSION["total_price"])) {
                     echo "
                         <tr>
                             <td scope='row'>{$oder['name']}</td>
-                            <td><img width='100px' height='100px' src={$oder['url_img']} alt={$oder['name']}></td>
+                            <td><img width='100px' height='100px' src=/admin/products/action/{$oder['url_img']} alt={$oder['name']}></td>
                             <td>{$fomat} vnd</td>
                             <td>
                             <div class='d-flex align-items-center'>

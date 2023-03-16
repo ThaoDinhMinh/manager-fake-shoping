@@ -18,7 +18,7 @@ $getProduct = $mysqli->query($sql_product);
                 <a href='index.php?id={$product['id']}'>
                     <div class='product'>
                         <div class='item-img'>
-                            <img class='w-100 d-block' src='{$product['url_img']}' alt='{$product['name']}'>
+                            <img class='w-100 d-block' src='/admin/products/action/{$product['url_img']}' alt='{$product['name']}'>
                         </div>
                         <div class='text-mean'>
                             <div class='title mt-2'>

@@ -30,7 +30,7 @@ if (isset($_GET["idting"])) {
 
                 echo "  <tr>
                 <td valign='middle'>{$odered['name']}</td>
-                <td><img style='width:100px;' src='{$odered['url_img']}' alt='{$odered['name']}'></td>
+                <td><img style='width:100px;' src='/admin/products/action/{$odered['url_img']}' alt='{$odered['name']}'></td>
                 <td valign='middle'>{$fomer} vnd</td>
                 <td valign='middle'>{$odered['quaintly']}</td>
                 </tr>

@@ -17,7 +17,7 @@ $getProductTop = $mysqli->query($sqlProductTop);
                 <a href='index.php?id={$productTop['id']}'>
                     <div class='product'>
                         <div class='item-img'>
-                            <img class='w-100 d-block' src='{$productTop['url_img']}' alt='{$productTop['name']}'>
+                            <img class='w-100 d-block' src='/admin/products/action/{$productTop['url_img']}' alt='{$productTop['name']}'>
                         </div>
                         <div class='text-mean'>
                             <div class='title mt-2'>

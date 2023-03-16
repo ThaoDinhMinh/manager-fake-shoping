@@ -27,21 +27,20 @@
                 echo "
                 <tr >
                 <td>{$produt_render['name']}</td>
-                <td><img src='{$produt_render[3]}' style='width:100px'></td>
+                <td><img src='/admin/products/action/{$produt_render['url_img']}' style='width:100px'></td>
                 <td>{$produt_render['description']}</td>
                 <td>{$produt_render['category']}</td>
                 <td>{$produt_render['price']}</td>
                 <td>{$produt_render['date_create']}</td>
                 <td>{$produt_render['date_uplate']}</td>
                 <td><form action='./products/action/delete.php' method='post'>
-                <input name='id_product' type='hidden' value='{$produt_render[0]}'>
+                <input name='id_product' type='hidden' value='{$produt_render['id']}'>
                 <button type='submit' class='btn btn-secondary'>Delete</button>
                 </form>
                 <form class='mt-3' action='' method='post'>
-                <input name='id_product_uplate' type='hidden' value='{$produt_render[0]}'>
+                <input name='id_product_uplate' type='hidden' value='{$produt_render['id']}'>
                 <button type='submit' class='btn btn-primary'>Uplate</button>
                 </form></td>
-
             </tr>
                 ";
             }
@@ -61,16 +60,14 @@
         echo "
         <h3 class='mt-3'>Chỉnh sửa products</h3>
         <table class='table table-primary table-success table-striped w-50'>
-         <form action='./products/action/edit.php' method='post'>
+         <form action='./products/action/edit.php' method='post' enctype='multipart/form-data'>
         <tr>
             <th scope='row'>Name</th>
             <td><input class='form-control' type='text' name='name' style='width: 100%;' value={$product_edit["name"]}></td>
         </tr>
-        <tr class=''>
-            <th scope='row'>Link url</th>
-            <td><input class='form-control' name='url_img' type='text' style='width: 100%;' value={$product_edit["url_img"]}></td>
-            <!-- <td><input name='upload' type='file'></td> -->
-
+        <tr>
+            <th>Chọn ảnh</th>
+            <td><input name='fileupload' class='form-control' type='file'></td>
         </tr>
         <tr class=''>
             <th scope='row'>Description</th>

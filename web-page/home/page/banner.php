@@ -15,7 +15,7 @@ $getBanner = $mysqli->query($sql_banner);
         <?php
         while ($banner = mysqli_fetch_array($getBanner)) {
             echo   " <div class='carousel-item active'>
-            <img src={$banner['img_upload']} class='d-block w-100 img-banner' alt={$banner['title']}>
+            <img src='/admin/banners/action/{$banner['img_upload']}' class='d-block w-100 img-banner' alt={$banner['title']}>
                 <div class='carousel-caption d-none d-md-block'>
                 <p>{$banner['title']}</p>
                 <h5 class='text-banner'>{$banner['content']}</h5>
