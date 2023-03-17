@@ -5,6 +5,7 @@
         <p class=""><a class="btn btn-primary" href="index.php?quanly=products">Quản lý product</a></p>
         <p class=""><a class="btn btn-primary" href="index.php?quanly=order">Quản lý oder user</a></p>
         <p class=""><a class="btn btn-primary" href="index.php?quanly=users">Quản lý users</a></p>
+        <p class=""><a class="btn btn-primary" href="index.php?quanly=abouts">Quản lý abouts</a></p>
         <p class=""><a class="btn btn-secondary" href="logout.php">Đăng xuất</a></p>
 
     <?php else : ?>

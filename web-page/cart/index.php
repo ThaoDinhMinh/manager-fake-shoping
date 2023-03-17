@@ -16,7 +16,6 @@ if (isset($_POST["save"])) {
 if (!isset($_SESSION["total_price"])) {
     $_SESSION["total_price"] = 0;
 }
-
 ?>
 
 <div class="container">

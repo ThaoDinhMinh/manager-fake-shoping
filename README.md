@@ -121,3 +121,8 @@
 2: Đang làm . \
 
 -- Tìm hiểu về AJAX để làm thêm chức năng Phân loại . \
+
+\*\*\* Ngày 17 /3
+
+1: Hoàn thiện
+-- tất cả chức năng đã đề ra ! DONE

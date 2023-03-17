@@ -23,6 +23,7 @@ if (isset($_POST["search"])) {
                     <a class="btn btn-sm" href="index.php?page=product">Sản phẩm</a>
                 </li>
                 <li class="nav-item"> <a class="btn btn-sm" href="index.php?page=news">Tin tức</a></li>
+                <li class="nav-item"> <a class="btn btn-sm" href="index.php?page=abouts">Thông tin</a></li>
             </ul>
             <form class="d-flex" role="search" method="post">
                 <input name="search" class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">

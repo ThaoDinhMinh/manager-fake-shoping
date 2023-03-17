@@ -22,9 +22,10 @@ if (isset($_SESSION["admin_id"])) {
         <?php
         while ($oders = mysqli_fetch_array($resuts)) {
             $format_total = number_format($oders['total_price']);
+            $mhid = substr(sha1($oders['id_of_oder']), 1, 6);
             echo "
                         <tr>
-                            <td>{$oders['id_of_oder']}</td>
+                            <td>{$mhid}</td>
                             <td>{$oders['name_user']}</td>
                             <td>{$oders['email_user']}</td>
                             <td>{$format_total} vnd</td>

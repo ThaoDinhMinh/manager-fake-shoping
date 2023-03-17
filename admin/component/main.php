@@ -15,6 +15,8 @@
         include("users/index.php");
     } elseif ($page == "detail") {
         include("detail-oder/index.php");
+    } elseif ($page == "abouts") {
+        include("abouts/index.php");
     } else {
         include("notfount/index.php");
     }

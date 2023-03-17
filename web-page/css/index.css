@@ -173,6 +173,17 @@ a {
 .show-qty {
   padding: 0 12px;
 }
+
+.all-product {
+  position: relative;
+}
+#overlay {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  bottom: 0;
+}
 @media (min-width: 1200px) {
   .carousel-caption {
     bottom: 10rem;

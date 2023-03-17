@@ -29,6 +29,8 @@
         include("web-page/oderDetail/index.php");
     } elseif ($page == "search") {
         include("web-page/search/index.php");
+    } elseif ($page == "abouts") {
+        include("web-page/abouts/index.php");
     } elseif ($page == "infor") {
         include("web-page/infor/index.php");
     }

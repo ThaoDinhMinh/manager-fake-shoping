@@ -1,5 +1,6 @@
 <div class="container">
     <h3 class="mt-4">Tất cả sản phẩm</h3><br />
+
     <div id="pagination_data">
     </div>
 
@@ -13,7 +14,7 @@
                 url: "web-page/news/pagination.php",
                 method: "POST",
                 data: {
-                    pages: page_load
+                    pages: page_load,
                 },
                 success: function(data) {
                     $('#pagination_data').html(data);
